@@ -1,5 +1,6 @@
 package com.example.debttracker;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -101,6 +102,19 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	public List<Person> getAllPersons(){
 		List<Person> persons = new LinkedList<Person>();
 		return persons;
+	}
+	public String[] getPersonNames(){
+		SQLiteDatabase db = this.getWritableDatabase();
+		String query = "SELECT * FROM money";
+		List<String> strlist = new ArrayList<String>();
+		Cursor cursor = db.rawQuery(query, null);
+		if(cursor.moveToFirst())
+		{
+			do{
+				strlist.add(cursor.getString(2));
+			}while(cursor.moveToNext());
+		}
+		return strlist.toArray(new String[0]);
 	}
 	
 }
