@@ -7,5 +7,7 @@
     <string name="title_activity_current_debts">CurrentDebts</string>
     <string name="Yolo">Cuz I dont know</string>
     <string name="title_activity_list_of_debts">ListOfDebts</string>
+    <string name="title_activity_generate_qr">GenerateQR</string>
+    <string name="TitleForAction">a</string>
 
 </resources>

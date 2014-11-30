@@ -41,6 +41,8 @@ public class CurrentDebts extends ActionBarActivity {
 		Toast toast = Toast.makeText(context, "Updated!", Toast.LENGTH_SHORT);
 		toast.show();
 		Intent intent = new Intent(this,MainActivity.class);
+		intent.putExtra("flag", "A");
+		intent.putExtra("Money", editText3.getText().toString());
 		startActivity(intent);
 	}
 	@Override
