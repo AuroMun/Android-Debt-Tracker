@@ -24,6 +24,7 @@
         </activity>
         <activity
             android:name=".CurrentDebts"
+            android:windowSoftInputMode="stateAlwaysVisible"
             android:label="@string/title_activity_current_debts" >
         </activity>
         <activity

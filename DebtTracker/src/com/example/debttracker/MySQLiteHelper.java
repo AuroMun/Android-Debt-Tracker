@@ -116,5 +116,18 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		}
 		return strlist.toArray(new String[0]);
 	}
+	public String[] getPersonDetails(String x,int y){
+		SQLiteDatabase db = this.getWritableDatabase();
+		String query = "SELECT * FROM money ORDER BY "+x + (y==1?" ASC":" DESC");
+		List<String> strlist = new ArrayList<String>();
+		Cursor cursor = db.rawQuery(query, null);
+		if(cursor.moveToFirst())
+		{
+			do{
+				strlist.add(cursor.getString(2)+" owes you "+cursor.getString(1));
+			}while(cursor.moveToNext());
+		}
+		return strlist.toArray(new String[0]);
+	}
 	
 }
